@@ -1,0 +1,25 @@
+<a href="/#!/todos/create_todo">Create</a>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Completed</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="todo in vm.todos">
+      <td>{{todo.name}}</td>
+      <td>{{todo.description}}</td>
+      <td>
+        <md-checkbox disabled ng-model="todo.completed">
+        </md-checkbox>
+      </td>
+      <td>
+        <a href="/#!/todos/{{todo.id}}/edit">Edit</a>
+        <a ng-click="vm.delete_todo(todo.id)" href="">Delete</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
